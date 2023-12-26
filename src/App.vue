@@ -11,7 +11,7 @@ import NavbarComp from "./components/NavbarComp.vue";
 import WeatherContent from "./components/WeatherContent.vue";
 import ErrorSection from "./components/ErrorSection.vue";
 import LoadingSection from "./components/LoadingSection.vue";
-import { reactive } from "vue";
+// import { reactive } from "vue";
 
 export default {
   name: "App",
@@ -22,8 +22,8 @@ export default {
       errormsg:
         "We're sorry, free weathr api is not able to retrieve weather information at the moment, please try back later, we are currently using free version...",
       title: "Simple Weather Update System",
-      weatherDatas: reactive([]),
-      tempWeatherDatas: reactive([]),
+      weatherDatas:[],
+      tempWeatherDatas: [],
       idx: 0,
       totalCity: 0,
       loading: true,
@@ -100,20 +100,39 @@ export default {
 
 <style>
 .weather_card {
-  background: linear-gradient(to right, #d8d5eb, #008dd5);
+  /* background: linear-gradient(to right, #d8d5eb, #008dd5); */
   /*  0, 0, 0 is black (RGB), and 0.35 is the alpha (transparency) value. 
   0px: horizontal offset of the shadow.
   5px: vertical offset of the shadow
   15px: blur radius of the shadow. 
   */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  /* background: white;  */
+  background: white; 
   border-radius: 10px;
-  background-color: #8ec5fc;
-  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+  /* linear-gradient
+    slanted at an angle of 62 degrees.
+    #8ec5fc 0% - beginning
+    #e0c3fc 100% - end
+   */
+  /* background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%); */
+  /* background: #fff; */
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+/* Hover effect - scale the card on hover */
+.weather_card:hover {
+  transform: scale(1.02);
+}
+
+/* Content inside the card */
+.card-body {
+  padding: 20px;
 }
 body {
-  background: #fff;
+  /* background: #394554;  */
+  /* background: #F5F5F7;  */
+  /* background-image: linear-gradient(62deg, #e5e9ec 0%, #e0c3fc 100%); */
+  background: #f5f5f7;
   margin: 0;
 }
 </style>

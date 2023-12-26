@@ -29,9 +29,13 @@ export default {
 <style scoped>
 #nav_bar {
   /* Liner gradient color for nav bar */
-   background-color: #8ec5fc;
-   background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
-  /* background: white; */
+  /* linear-gradient
+    slanted at an angle of 62 degrees.
+    #8ec5fc 0% - beginning
+    #e0c3fc 100% - end
+   */
+   /* background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%); */
+  background: white;
   display: flex;
   justify-content: center;
   text-align: center;
